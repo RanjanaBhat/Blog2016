@@ -1,0 +1,19 @@
+<%= div_for post do %>
+<style>
+body {background-color: lightgrey;}
+</style>
+Posted by, <font color="purple"><%= post.user.email %> </font> 
+<h3>
+<p>
+	<%= link_to post.title, category_post_path(@category, post) %> <br/>
+   <%= post.body %>
+</p>
+</h3>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<font color="grey"> <%= time_ago_in_words(post.created_at) %> ago </font>
+<br/>
+<%#= link_to 'Show', category_post_path(@category, post) %>  
+<%= link_to 'Edit', edit_category_post_path(@category, post) %> | 
+ <%= link_to 'Delete', category_post_path(@category, post),  confirm: 'Are you sure?' ,:method => :delete %>
+<% end %>
+

@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<div id="postinfo">
+<p>
+  <b>Category:</b>
+  <%= @post.category.name %>
+</p>
+<h3 style="color:blue;"> A Post by </h3>
+<p>
+  <b>Name:</b>
+  <%= @post.user.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @post.user.email %>
+</p>
+
+<p>
+  <b>Post Title:</b>
+  <%= @post.title %>
+</p>
+
+<p>
+  <b>Post Body:</b>
+  <%= @post.body %>
+</p>
+<p>
+  <b>Post Tag:</b>
+  <%= @post.tags.map{|n| n.name}.join(' , ') %>
+</p>
+</div>
+
+<%= link_to 'Edit',  edit_category_post_path(@post) %> |
+<%= link_to 'Back', categories_path %>
+<h2> Comments </h2>
+<%= render :partial => @post.comments %>
+
+
+
+<h4> Leave a Comment! </h4>
+
+<%= form_for ([@post.category, @post, @post.comments.build]) do |f| %>
+<div class="field">
+<%= f.label :User_Name %><br/>
+<%= f.text_field :name, :value => current_user.name%>
+</div> 
+<div class="field">
+<%= f.label :body %><br/>
+<%= f.text_area :body %>
+</div> 
+
+<%= f.hidden_field :post_id, :value => @post.id %>
+<%= f.hidden_field :user_id, :value => current_user.id %>
+<p> <%= f.submit %> </p>
+<% end %>
+
