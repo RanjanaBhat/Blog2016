@@ -1,31 +1,91 @@
 <h1> "Sign Up" </h1>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<%= devise_error_messages! %>
+<table border = 1px>
+  <tr>
 
-  <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name, class: 'form-control' %>
-  </div>
+    <td><%= f.label :First_Name%> : </td>
+    <td><%=  f.text_field :fname, class: 'form-control' %> </td>
 
-  <div class="form-group">
-    <%= f.label :email %>
-    <%= f.email_field :email, class: 'form-control' %>
-  </div>
+  </tr>
 
-  <div class="form-group">
-    <%= f.label :password %>
-    <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
-    <% if @validatable %>
-      <span class="help-block"><%= @minimum_password_length %> characters minimum</span>
-    <% end %>
-  </div>
+  <tr>
+    <td><%= f.label :Last_Name %> :</td>
+    <td><%= f.text_field :lname, class: 'form-control' %></td>
+  </tr>
+  
 
-  <div class="form-group">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
-  </div>
+  
+  <tr>
+    <td><%= f.label :User_Name %> :</td>
+    <td><%= f.text_field :name, class: 'form-control' %></td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :Email_Id %> :</td>
+    <td><%= f.email_field :email, class: 'form-control' %></td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><%= f.label :Password %> :</td>
+    <td><%= f.password_field :password, autocomplete: "off", class: 'form-control' %></td>
+  </tr>
+  <% if @validatable %>
+  <span class="help-block"><%= @minimum_password_length %> characters minimum</span>
+  <% end %>
+  
+  
+  <tr>
+    <td><%= f.label :Password_Confirmation %> :</td>
+    <td><%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %></td>
+  </tr>
+  
+
+
+  <tr>
+    <td><%= f.label :Gender %> : </td>
+    <td>
+      <%= f.select :gender, ['Male', 'Female'], include_blank: true, class: 'form-control' %><br> </td>
+
+    </tr>
+
+
+
+    <tr>
+      <td><%= f.label :Birth_Date %> :</td>
+
+      <td><%= f.date_select :birthday, :order => [:day, :month, :year], :prompt => [day: 'Select day', month: 'Select month', year: 'Select year'], :end_year => Time.now.year - 50 , :start_year => Time.now.year -%></td>
+    </tr>
+
+
+
+    <tr>
+      <td><%= f.label :City %> :</td>
+      <td><%= f.text_field :cur_city, class: 'form-control' %></td>
+    </tr>
+
+
+
+    <tr>
+      <td><%= f.label :Country %> :</td>
+      <td><%= f.text_field :country, class: 'form-control' %></td>
+    </tr>
+
+
+
+    <tr>
+      <td><%= f.label :Favourite_Color %> :</td>
+      <td><%= f.text_field :fav_color, class: 'form-control' %></td>
+    </tr>
+
+  </table>
+  
+  
+  <br/>
 
   <%= f.submit "Sign up", class: 'btn btn-primary' %>
-<% end %>
+  <% end %>
 
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>

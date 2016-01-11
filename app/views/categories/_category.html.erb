@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <div class="category">
-<h3><%= link_to category.name ,category %></h3>
-<%= link_to 'Delete', category, method: :delete, data: { confirm: 'Are you sure?' } %> |
-<%= link_to 'Edit', edit_category_path(category) %> 		
+	<h3><%= link_to category.name ,category %></h3>
+	<%= link_to 'Delete', category, method: :delete, data: { confirm: 'Are you sure?' } %> |
+	<%= link_to 'Edit', edit_category_path(category) %> 		
 </div >
 
 <%#= link_to 'Show', category %>
- 
+
 <%#= link_to 'Back', categories_path %>

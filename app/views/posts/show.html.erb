@@ -30,11 +30,15 @@
   <%= @post.tags.map{|n| n.name}.join(' , ') %>
 </p>
 </div>
-
+<% if user_signed_in? %>
+<% if current_user.id == @post.user_id %>
 <%= link_to 'Edit',  edit_category_post_path(@post) %> |
 <%= link_to 'Back', categories_path %>
+<% end %>
+<% end %>
 <h2> Comments </h2>
 <%= render :partial => @post.comments %>
+
 
 
 
