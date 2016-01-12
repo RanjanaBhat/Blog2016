@@ -1,5 +1,11 @@
+<% if user_signed_in? %>
+
 <h1>New comment</h1>
 
 <%= render 'form' %>
 
 <%#= link_to 'Back', comments_path %>
+<%else%>
+You need to Sign In first! <br/>
+<%= link_to 'Sign In', new_user_session_path %>
+<%end%>

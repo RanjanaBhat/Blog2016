@@ -1,12 +1,15 @@
 <p id="notice"><%= notice %></p>
-
+<table border = 1>
 <h2>
 	<%=  @category.name %>
 </h2>
+</table>
 
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>
-<%= render :partial => @category.posts %>
+<%= render :partial => @category.posts %> 
+<br/>
+No. of Posts: <%= @category.posts.count %>
 <h4> Leave a Post! </h4>
 <%= link_to 'Add Post', new_category_post_path(@category) %>
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20160111133830) do
+ActiveRecord::Schema.define(:version => 20160112055502) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -101,14 +101,10 @@ ActiveRecord::Schema.define(:version => 20160111133830) do
     t.string   "country"
     t.string   "fav_color"
     t.string   "cur_city"
-    t.string   "attach_file_name"
-    t.string   "attach_content_type"
-    t.integer  "attach_file_size"
-    t.datetime "attach_updated_at"
-    t.string   "pic_file_name"
-    t.string   "pic_content_type"
-    t.integer  "pic_file_size"
-    t.datetime "pic_updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

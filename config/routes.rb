@@ -3,9 +3,10 @@ Blog2016::Application.routes.draw do
 
   resources :posttags
 
-
+  resources :comments
+  resources :posts
   
-  
+  #root to: 'tags#index'
 
 
   devise_for :users

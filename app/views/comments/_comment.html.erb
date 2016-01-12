@@ -2,6 +2,7 @@
 <style>
 body {background-color: lightgrey;}
 </style>
+
 posted by, <font color="purple"><%= comment.user.email %> </font> 
 <h3>
 	<p>
@@ -11,6 +12,7 @@ posted by, <font color="purple"><%= comment.user.email %> </font>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <font color="grey"> <%= time_ago_in_words(comment.created_at) %> ago </font>
 <br/>
+
 <% if user_signed_in? %>
 <% if current_user.id == comment.user_id %> 
 <%= link_to 'Edit', edit_category_post_comment_path(@post, comment) %> | 

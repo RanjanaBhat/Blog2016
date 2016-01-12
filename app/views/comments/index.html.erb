@@ -1,6 +1,29 @@
+<style>
+table {
+    width:50%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+   background-color:#fff;
+}
+table#t01 th  {
+    background-color: black;
+    color: white;
+}
+</style>
 <h1>Listing comments</h1>
 
-<table>
+<table id="t01">
   <tr>
     <th>Post</th>
     <th>Name</th>
@@ -23,5 +46,6 @@
 </table>
 
 <br />
-
+<% if user_signed_in? %>
 <%= link_to 'New Comment', new_comment_path %>
+<%end%>

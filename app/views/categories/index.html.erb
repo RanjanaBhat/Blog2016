@@ -1,4 +1,8 @@
-	
+<p id="notice"><%= notice %></p>
 <h1><u>Listing Categories</u></h1>
 <%= render @categories %>
+No. of Categroy: <%= @categories.count %> <br/>
+<br/>
+<%# if user_signed_in? %>
 <%= link_to 'New Category', new_category_path, :class => "button" %>
+<%#end%>
