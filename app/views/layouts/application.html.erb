@@ -6,18 +6,35 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<style>
-body {background-color: lightgrey;}
+<style>  
+.img-circular{
+ width: 100px;
+ height: 100px;
+ background-size: cover;
+ border-radius: 100px;
+ -webkit-border-radius: 50px;
+ -moz-border-radius: 50px;
+}
 </style>
+<style>
+    body {background-color: grey;}
+</style>
+<div id="snow">
 <body>
-  <div id="hdr">
-	<nav class="navbar navbar-inverse">
+
+<div id="hdr">
+  
   <div class="container">
     
       <ul class="nav navbar-nav pull-right">
         <% if user_signed_in? %>
-        Signed in as <%= current_user.email %>. Not you?
-          <li class="dropdown">
+         
+        Signed in as <%= current_user.email %>. Not you? <%= image_tag current_user.photo, :size => "80x80", :class=> "img-circular" %>
+         <class="round-image-50"> <%#= image_tag current_user.photo(:thumb) %>
+        
+        <br/>
+
+          <div class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
               <%= current_user.name %>
               <span class="caret"></span>
@@ -28,23 +45,22 @@ body {background-color: lightgrey;}
               <li><%= link_to 'Home', url_for(:back)%></li>
 
             </ul>
-          </li>
+          </div>
         <% else %>
-          <li><b><%= link_to 'Sign In', new_user_session_path, {:style=>'color:#FFFFFF;', :class => "css_class"} %></font></b></li>
+          <li><b><%= link_to 'Sign In', new_user_session_path, {:style=>'color:#FFFFFF;', :class => "css_class"} %></font></b></li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/>
           <li><b><%= link_to 'Sign Up', new_user_registration_path ,{:style=>'color:#FFFFFF;', :class => "css_class"}%></b></li>
         <% end %>
       </div>
       </ul>
-    </div>
+    
   </div>
 </nav>
-
-
-<div class="container">
+  <div class="container">
 <%= yield %>
 </div><!--container-->
 
 
 
 </body>
+</div>
 </html>
