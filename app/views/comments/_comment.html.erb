@@ -1,7 +1,5 @@
 <%= div_for comment do %>
-<style>
-body {background-color: lightgrey;}
-</style>
+
 
 posted by, <font color="purple"><%= comment.user.email %> </font> 
 <h3>
@@ -15,8 +13,11 @@ posted by, <font color="purple"><%= comment.user.email %> </font>
 
 <% if user_signed_in? %>
 <% if current_user.id == comment.user_id %> 
-<%= link_to 'Edit', edit_category_post_comment_path(@post, comment) %> | 
-<%= link_to "Remove", [@post.category,@post,comment], method: :delete, data: { confirm: "Are you sure?"}%>
+<%= link_to edit_category_post_comment_path(@post, comment), :title => 'Edit', :rel => 'tooltip', class: "btn btn-info" do %>
+              <span class="glyphicon glyphicon-edit"></span> Edit  
+          <% end %>	| 
+          
+<%= link_to "Delete", [@post.category,@post,comment], :title => 'Delete', :rel => 'tooltip', method: :delete, data: { confirm: "Are you sure?"}%>
 <% end %>
 <% end %>
 <% end %>

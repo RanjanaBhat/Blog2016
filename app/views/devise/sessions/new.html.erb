@@ -1,19 +1,31 @@
+<div class="multi_bg_example">
 <br/><br/><br/><br/><br/>
-<h2>Log in</h2>
+<style>
+    body {
+          background-image: url(Wallpaper-HD-Android-For-PC-Desktop-Free-Download.jpg);
+          background-size: 100%;
+          background-position: center;
+          background-color: black;
+        }
+        label {text color:"white";}
+</style>
+
+<div id="aDiv">
+<h1 style="color:white;"><b>Log in</b></h1>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
+  <div class="field" >
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
 
-  <div class="field">
+  <div  class="field" >
     <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
-    <div class="field">
+    <div class="field" style="color:white;">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
@@ -23,5 +35,7 @@
     <%= f.submit "Log in" %>
   </div>
 <% end %>
-
+</form>
 <%= render "devise/shared/links" %>
+</div>
+<br/><br/><br/><br/>  </div>

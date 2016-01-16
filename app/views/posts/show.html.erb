@@ -25,19 +25,17 @@
 </dl>
 <%#= f.hidden_field :category_id, :value => @category.id %>
 <%#= f.hidden_field :post_id, :value => @post.id %>
-
-<%= link_to t('.back', :default => t("helpers.links.back")),
-              posts_path, :class => 'btn btn-default'  %>
+<%= link_to posts_path, :title => 'Back', :rel => 'tooltip', class: "btn btn-default" do %>
+    <span class="glyphicon glyphicon-step-backward"></span> Back 
+<% end %>
   <% if user_signed_in? %>
 <% if current_user.id == @post.user_id %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_post_path(@post), :class => 'btn btn-default' %>
-<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              post_path(@post),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
-
+<%= link_to edit_post_path(@post), :title => 'Edit', :rel => 'tooltip', class: "btn btn-info" do %>
+              <span class="glyphicon glyphicon-edit"></span> Edit  
+          <% end %>
+<%= link_to post_path(@post), :title => 'Delete', :rel => 'tooltip', method: :delete, data: { confirm: 'Are you sure?'}, remote: true, class: "btn btn-danger" do %>
+          <span class="glyphicon glyphicon-trash"></span> Delete 
+          <% end %>
 <% end %>
 <% end %>
 <h2> Comments </h2>
@@ -60,6 +58,8 @@ No. of Comments: <%= @post.comments.count %>
 
 <%= f.hidden_field :post_id, :value => @post.id %>
 <%= f.hidden_field :user_id, :value => current_user.id %>
-<p> <%= f.submit %> </p>
+<p> <%= f.submit nil, :title => 'Save', :rel => 'tooltip', :class => 'btn btn-primary' do %>
+      <span class="glyphicon glyphicon-disk-saved"></span> Update  
+          <% end %> </p>
 <% end %>
 

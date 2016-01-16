@@ -1,4 +1,9 @@
-<%= form_for @comment, :html => { :class => "form-horizontal comment" } do |f| %>
+<% @comment = Comment.new %>
+<%# raise params.inspect %>
+
+<% @category = Category.find_by_permalink(params[:id]) %>
+
+<%= form_for [:category,:post, @comment], :html => { :class => "form-horizontal comment" } do |f| %>
 
   <% if @comment.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
@@ -44,18 +49,21 @@
     <%=f.error_span(:user_id) %>
   </div>
   <div class="form-group">
-    <%= f.label :permalink, :class => 'control-label col-lg-2' %>
+    <%#= f.label :permalink, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :permalink, :class => 'form-control' %>
+      <%#= f.text_field :permalink, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:permalink) %>
+    <%#=f.error_span(:permalink) %>
   </div>
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
-      <%= f.submit nil, :class => 'btn btn-primary' %>
-      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                comments_path, :class => 'btn btn-default' %>
+      <%= f.submit nil, :title => 'Save', :rel => 'tooltip', :class => 'btn btn-primary' do %>
+      <span class="glyphicon glyphicon-disk-saved"></span> Update  
+          <% end %>
+      <%= link_to comments_path, :title => 'Cancel', :rel => 'tooltip', class: "btn btn-default" do %>
+              <span class="glyphicon glyphicon-cancel"></span> Cancel  
+          <% end %>
     </div>
   </div>
 

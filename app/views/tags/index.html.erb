@@ -21,21 +21,21 @@
         <td><%=l tag.created_at %></td>
         <% if user_signed_in? %> 
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_tag_path(tag), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      tag_path(tag),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
+          <%= link_to edit_tag_path(tag), :title => 'Edit', :rel => 'tooltip', class: "btn btn-info btn-xs" do %>
+            <span class="glyphicon glyphicon-edit"></span> Edit 
+          <% end %>
+          <%= link_to tag_path(tag), :title => 'Delete', :rel => 'tooltip', method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: "btn btn-xs btn-danger" do %>
+          <span class="glyphicon glyphicon-trash"></span> Delete 
+          <% end %>
         </td>
         <%end%>
       </tr>
     <% end %>
   </tbody>
 </table>
-<%= link_to t('.back', :default => t("helpers.links.back")),
-root_path, :class => 'btn btn-default'  %>
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_tag_path,
-            :class => 'btn btn-primary' %>
+<%= link_to root_path, :title => 'Back', :rel => 'tooltip', class: "btn btn-default" do %>
+    <span class="glyphicon glyphicon-step-backward"></span> Back 
+<% end %>
+<%= link_to new_tag_path, :title => 'New Tag', :rel => 'tooltip', class: "btn btn-info" do %>
+    <span class="glyphicon glyphicon-new-window"></span> New 
+<% end %>

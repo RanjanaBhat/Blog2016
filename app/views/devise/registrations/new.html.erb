@@ -1,102 +1,102 @@
-<br/><br/><br/><br/><br/>
-<h1> "Sign Up" </h1>
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-<%= devise_error_messages! %>
-<style>
-{
-  label {color=white;}
-}
-</style>
-<table border = 1px>
-  <tr>
-
-    <td><%= f.label :First_Name%> : </td>
-    <td><%=  f.text_field :fname, class: 'form-control' %> </td>
-
-  </tr>
-
-  <tr>
-    <td><%= f.label :Last_Name %> :</td>
-    <td><%= f.text_field :lname, class: 'form-control' %></td>
-  </tr>
-  
-
-  
-  <tr>
-    <td><%= f.label :User_Name %> :</td>
-    <td><%= f.text_field :name, class: 'form-control' %></td>
-  </tr>
-
-  <tr>
-    <td><%= f.label :Email_Id %> :</td>
-    <td><%= f.email_field :email, class: 'form-control' %></td>
-  </tr>
-  
-
-  
-  <tr>
-    <td><%= f.label :Password %> :</td>
-    <td><%= f.password_field :password, autocomplete: "off", class: 'form-control' %></td>
-  </tr>
-  <% if @validatable %>
-  <span class="help-block"><%= @minimum_password_length %> characters minimum</span>
-  <% end %>
-  
-  
-  <tr>
-    <td><%= f.label :Password_Confirmation %> :</td>
-    <td><%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %></td>
-  </tr>
-  
-
-
-  <tr>
-    <td><%= f.label :Gender %> : </td>
-    <td>
-      <%= f.select :gender, ['Male', 'Female'], include_blank: true, class: 'form-control' %><br> </td>
-
+  <h1> "Sign Up" </h1>
+  <%= form_for(resource ,as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+<table>
+    <tr>
+      <div class="form-group">
+      <td><label for="First_Name">First Name</label></td>
+      <td><input type="fname" class="form-control" id="fname" placeholder="First Name">
+    </div> </td>
     </tr>
 
-
+    <tr>
+      <div class="form-group">
+      <td><label for="Last_Name">Last Name</label></td>
+      <td><input type="lname" class="form-control" id="lname" placeholder="Last Name">
+    </div> </td>
+    </tr>
 
     <tr>
-      <td><%= f.label :Birth_Date %> :</td>
+      <div class="form-group">
+      <td><label for="User_Name">User Name</label></td>
+      <td><input type="name" class="form-control" id="name" placeholder="User Name">
+    </div> </td>
+    </tr>
 
+    <tr>
+      <div class="form-group">
+      <td><label for="Email">Email address</label> </td>
+      <td><input type="email" class="form-control" id="email" placeholder="Email">
+    </div></td>
+    </tr>
+
+    <tr>
+      <div class="form-group">
+      <td><label for="Password">Password</label></td>
+      <td><input type="password" class="form-control" autocomplete: "off" id="password" placeholder="Password"></td>
+    </div>
+    </tr>
+    <% if @validatable %>
+    <span class="help-block"><%= @minimum_password_length %> characters minimum</span>
+    <% end %>
+
+    <tr>
+      <div class="form-group">
+      <td><label for="Password_Confirmation">Password</label></td>
+      <td><input type="password_confirmation" class="form-control" id="password_confirmation" autocomplete: "off" placeholder="Password Confirmation"></td>
+    </div>
+    </tr>
+
+    <tr>
+      <div class="form-group">
+        <td><label for="Gender">Gender</label></td>
+    <td><label>
+      <input type="radio" name="gender" id="gender" value="female" 
+      checked>
+      Female
+    </label>
+    <label>
+      <input type="radio" name="gender" id="gender" value="female">Male
+    </label> </td>
+    </div>
+    </tr>
+
+    <tr>
+      <td><label for="Birth_Date">Birth Date</label></td>
       <td><%= f.date_select :birthday, :order => [:day, :month, :year], :prompt => [day: 'Select day', month: 'Select month', year: 'Select year'], :end_year => Time.now.year - 50 , :start_year => Time.now.year -%></td>
     </tr>
 
-
-
     <tr>
-      <td ><%= f.label :City %> :</td>
-      <td><%= f.text_field :cur_city, class: 'form-control' %></td>
-    </tr>
-
-
-
-    <tr>
-      <td><%= f.label :Country %> :</td>
-      <td><%= f.text_field :country, class: 'form-control' %></td>
-    </tr>
-
-
-
-    <tr>
-      <td><%= f.label :Favourite_Color %> :</td>
-      <td><%= f.text_field :fav_color, class: 'form-control' %></td>
+      <div class="form-group">
+      <td ><label for="City">City</label></td>
+      <td><input type="city" class="form-control" id="city" placeholder="City"></td>
+    </div>
     </tr>
 
     <tr>
-      <td><%= f.label :Upload_pic %> :</td>
-      <td><%= f.file_field :photo, :autofocus => true, class: 'form-control' %></td>
+      <div class="form-group">
+      <td ><label for="Country">Country</label></td>
+      <td><input type="country" class="form-control" id="country" placeholder="Country"></td>
+    </div>
     </tr>
-  </table>
+
+    <tr>
+      <div class="form-group">
+      <td ><label for="Favourite_Color">City</label></td>
+      <td><input type="fav_color" class="form-control" id="fav_color" placeholder="Favourite Color"></td>
+    </div>
+    </tr>
+
+    <tr>
+      <div class="form-group">
+      <td><label for="Upload_pic">Upload_pic</label></td>
+      <td><input type="file" id="photo"></td>
+      </div>
+    </tr>
+</table>
+<br/>
   
-  
-  
-  <br/>
-
-  <%= f.submit "Sign up", class: 'btn btn-primary' %>
+<button type="submit" class="btn btn-default">Submit</button>
   <% end %>
 
   <%= render "devise/shared/links" %>

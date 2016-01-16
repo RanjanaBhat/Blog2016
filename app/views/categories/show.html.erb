@@ -10,16 +10,16 @@
   <dd><%#= @category.permalink %></dd>
 </dl>
 
-<%= link_to t('.back', :default => t("helpers.links.back")),
-categories_path, :class => 'btn btn-default'  %>
+<%= link_to categories_path, :title => 'Back', :rel => 'tooltip', class: "btn btn-default" do %>
+    <span class="glyphicon glyphicon-step-backward"></span> Back 
+<% end %>
 <% if user_signed_in? %>              
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
-edit_category_path(@category), :class => 'btn btn-default' %>
-<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-category_path(@category),
-:method => 'delete',
-:data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-:class => 'btn btn-danger' %>
+<%= link_to edit_category_path(@category), :title => 'Edit', :rel => 'tooltip', class: "btn btn-info" do %>
+              <span class="glyphicon glyphicon-edit"></span> Edit  
+          <% end %>
+<%= link_to category_path(@category), :title => 'Delete', :rel => 'tooltip', method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: "btn btn-danger" do %>
+          <span class="glyphicon glyphicon-trash"></span> Delete 
+          <% end %>
 <% end %>              
 <br/>
 <br/>
@@ -29,7 +29,7 @@ No. of Posts: <%= @category.posts.count %>
 <% if user_signed_in? %>
 <h4> Leave a Post! </h4>
 <%#= link_to 'Add Post', new_category_post_path(@category) %>
-<%= link_to t('.Add_Post', :default => t("helpers.links.new")),
-new_category_post_path(@category),
-:class => 'btn btn-primary' %>
+<%= link_to new_category_post_path(@category), :title => 'New Post', :rel => 'tooltip', class: "btn btn-primary" do %>
+    <span class="glyphicon glyphicon-new-window"></span> Add Post
+<% end %>
 <% end%>

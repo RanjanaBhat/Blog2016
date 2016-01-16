@@ -1,5 +1,6 @@
 Blog2016::Application.routes.draw do
   
+  resources :tags
 
   resources :posttags
 
@@ -17,7 +18,6 @@ Blog2016::Application.routes.draw do
     resources :comments
   end
 end
-resources :tags
 
   
 #root to: 'categories#index'

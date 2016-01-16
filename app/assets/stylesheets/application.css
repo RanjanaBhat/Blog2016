@@ -15,6 +15,15 @@
  *= require bootstrap_and_overrides
  */
 
+.table table-striped
+{
+  background-color: pink;
+}
+.dropdown-toggle{
+  
+  font-size: 15pt;
+  color: white;
+}
 .round-image-50 {
     background-color: white;
     border: 1px solid #d9d9d9;
@@ -29,13 +38,12 @@
 }
 
 
-#header 
+.jumbotron 
 {
     background-color:black;
-    color:white;
+    color:black;
     text-align:center;
     padding:30px;
-    font-size: 20px;
 }
 
 #nav {
@@ -47,6 +55,7 @@
     padding:5px;
 
 }
+#aDiv{width: 300px; height: 300px; margin: 0 auto;}
 #section {
     width:91.2%;
     height:350px;
@@ -59,26 +68,37 @@
    
 }
 #footer {
-    background-color:black;
+    background-image: url(hdrimg.jpg);
+    background-position: center;
     color:white;
     clear:both;
+    position: relative;
     text-align:center;
     padding:5px;
 }
 #hdr {
-    background-color:black;
+    background-image: url(hdrimg.jpg);
+    background-position: center;
     color:white;
     clear:both;
     padding:5px;
 }
+body
+  {
+    color: white;
+    background-color: black;
+
+  }
 .container
 {
+  
 	margin-top: 40px;
 }
 body h1,h2
 {
 	font-family: "HelveticaNeue-Light", "Helvetiva Neue Light","Helvetiva Neue" Helvetica, Arial, sans-serif;
 	font-weight: 300;
+  color: white;
 }
 .intro
 {
@@ -90,16 +110,7 @@ body h1,h2
 	font-size: 18px;
 	line-height: 1.5;
 }
-.category 
-{
-	border-bottom: 1px solid #eee;
-	padding-bottom: 10px;
-	margin-bottom: 20px;
-}
-.category p 
-{
-	margin-bottom: 10px;
-}
+
 hr
 {
 	border: none;
@@ -124,14 +135,7 @@ hr
   padding: 10px;
 
 }
-.category
-{
-margin-bottom: 20px;
-  border: 1px solid #eee;
-  background: #f9f9f9;
-  width: 500px;
-  padding: 10px;
-}
+
 .comment
 {
 	margin-bottom: 20px;
@@ -146,6 +150,7 @@ h4
 }
 textarea
 {
+  color: white;
 	width: 500px
 	height: 200px;
 }
@@ -154,6 +159,7 @@ input[type="submit"] {
 }
 
 div#main {
+
   @include grid-row;
 }
 
@@ -165,4 +171,66 @@ footer {
   p {
     line-height: 100px;
   }
+}
+.multi_bg_example {
+  background-image   : url(loginpg.jpg),
+                       url(loginpg.jpg),
+                       linear-gradient(to left, rgba(30, 75, 115, 1),  rgba(255, 255, 255, 0));
+
+  background-repeat  : no-repeat,
+                       no-repeat,
+                       no-repeat;
+
+  background-position: bottom right,
+                       left,
+                       right;
+}
+
+form
+{
+    align:"center";
+}
+#snow{
+  background-color: black;
+  background: none;
+  font-family: Androgyne;
+  background-image: url('s1.png'), url('s2.png'), url('s3.png');
+  height: 130%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index:1;
+  -webkit-animation: snow 10s linear infinite;
+  -moz-animation: snow 10s linear infinite;
+  -ms-animation: snow 10s linear infinite;
+  animation: snow 10s linear infinite;
+}
+@keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}
+@-moz-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 400px 1000px, 200px 400px, 100px 300px;}
+}
+@-webkit-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}
+@-ms-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+} 
+.img-circular{
+ width: 100px;
+ height: 100px;
+ background-size: cover;
+ border-radius: 100px;
+ -webkit-border-radius: 50px;
+ -moz-border-radius: 50px;
 }

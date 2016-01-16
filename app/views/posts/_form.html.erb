@@ -86,10 +86,12 @@
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
-      <%= f.submit nil, :class => 'btn btn-primary' %>
-      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                posts_path, :class => 'btn btn-default' %>
+      <%= f.submit nil, :title => 'Save', :rel => 'tooltip', :class => 'btn btn-primary' do %>
+      <span class="glyphicon glyphicon-disk-saved"></span> Update  
+          <% end %>
+      <%= link_to posts_path, :title => 'Cancel', :rel => 'tooltip', class: "btn btn-default" do %>
+              <span class="glyphicon glyphicon-cancel"></span> Cancel  
+          <% end %>
     </div>
   </div>
-
 <% end %>

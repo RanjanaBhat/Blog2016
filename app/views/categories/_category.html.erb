@@ -1,9 +1,12 @@
 
 <div class="category">
 	<h3><%= link_to category.name ,category %></h3>
-
-	<%= link_to 'Delete', category, method: :delete, data: { confirm: 'Are you sure?' } %> |
-	<%= link_to 'Edit', edit_category_path(category) %> 		
+	<%= link_to category_path(category), :title => 'Delete', :rel => 'tooltip', method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: "btn btn-danger" do %>
+          <span class="glyphicon glyphicon-trash"></span> Delete 
+          <% end %>|
+	<%= link_to edit_category_path(category), :title => 'Edit', :rel => 'tooltip', class: "btn btn-info" do %>
+              <span class="glyphicon glyphicon-edit"></span> Edit  
+          <% end %>		
 </div >
 
 <%#= link_to 'Show', category %>
