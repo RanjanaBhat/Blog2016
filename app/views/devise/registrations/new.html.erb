@@ -1,102 +1,100 @@
-  <h1> "Sign Up" </h1>
+  
   <%= form_for(resource ,as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-<table>
-    <tr>
-      <div class="form-group">
-      <td><label for="First_Name">First Name</label></td>
-      <td><input type="fname" class="form-control" id="fname" placeholder="First Name">
-    </div> </td>
-    </tr>
+<div class="container">
 
-    <tr>
+<div class="row">
+    <div class="col-xs-12  col-md-6  col-md-offset-3">
+    <form role="form">
+      <h2 style="color:white;" align="center"> Sign Up </h2>
+      <hr class="colorgraph">
+      <div class="row">
+        <div class=" col-md-8">
+          <div class="form-group">
+                        <input type="text" name="first_name" id="fname" class="form-control input-lg" placeholder="First Name" tabindex="1">
+          </div>
+        </div>
+        <div class=" col-md-4">
+          <div class="form-group">
+            <input type="text" name="last_name" id="lname" class="form-control input-lg" placeholder="Last Name" tabindex="2">
+          </div>
+        </div>
+      </div>
       <div class="form-group">
-      <td><label for="Last_Name">Last Name</label></td>
-      <td><input type="lname" class="form-control" id="lname" placeholder="Last Name">
-    </div> </td>
-    </tr>
-
-    <tr>
+        <input type="text" name="user_name" id="name" class="form-control input-lg" placeholder="User Name" tabindex="3">
+      </div>
       <div class="form-group">
-      <td><label for="User_Name">User Name</label></td>
-      <td><input type="name" class="form-control" id="name" placeholder="User Name">
-    </div> </td>
-    </tr>
-
-    <tr>
-      <div class="form-group">
-      <td><label for="Email">Email address</label> </td>
-      <td><input type="email" class="form-control" id="email" placeholder="Email">
-    </div></td>
-    </tr>
-
-    <tr>
-      <div class="form-group">
-      <td><label for="Password">Password</label></td>
-      <td><input type="password" class="form-control" autocomplete: "off" id="password" placeholder="Password"></td>
-    </div>
-    </tr>
-    <% if @validatable %>
+        <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+            <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="5">
+          </div>
+        </div>
+        <% if @validatable %>
     <span class="help-block"><%= @minimum_password_length %> characters minimum</span>
     <% end %>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+            <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
+          </div>
+        </div>
 
-    <tr>
-      <div class="form-group">
-      <td><label for="Password_Confirmation">Password</label></td>
-      <td><input type="password_confirmation" class="form-control" id="password_confirmation" autocomplete: "off" placeholder="Password Confirmation"></td>
-    </div>
-    </tr>
-
-    <tr>
-      <div class="form-group">
-        <td><label for="Gender">Gender</label></td>
-    <td><label>
-      <input type="radio" name="gender" id="gender" value="female" 
-      checked>
-      Female
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group" style="color:white;">
+            <label for="Gender">Gender</label>
+    <label><input type="radio" name="gender" id="gender" value="female" 
+      checked>Female</label>
+    <label><input type="radio" name="gender" id="gender" value="female">Male
     </label>
-    <label>
-      <input type="radio" name="gender" id="gender" value="female">Male
-    </label> </td>
-    </div>
-    </tr>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+            <input type="birthday" name="birthday" id="birthday" class="form-control input-lg" placeholder="Birthdate" tabindex="7">
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+            <input type="city" name="city" id="city" class="form-control input-lg" placeholder="City" tabindex="8">
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+            <input type="Country" name="country" id="country" class="form-control input-lg" placeholder="Country" tabindex="9">
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+            <input type="fav_color" name="fav_color" id="fav_color" class="form-control input-lg" placeholder="Favourite Color" tabindex="10">
+          </div>
+        </div>
 
-    <tr>
-      <td><label for="Birth_Date">Birth Date</label></td>
-      <td><%= f.date_select :birthday, :order => [:day, :month, :year], :prompt => [day: 'Select day', month: 'Select month', year: 'Select year'], :end_year => Time.now.year - 50 , :start_year => Time.now.year -%></td>
-    </tr>
-
-    <tr>
-      <div class="form-group">
-      <td ><label for="City">City</label></td>
-      <td><input type="city" class="form-control" id="city" placeholder="City"></td>
-    </div>
-    </tr>
-
-    <tr>
-      <div class="form-group">
-      <td ><label for="Country">Country</label></td>
-      <td><input type="country" class="form-control" id="country" placeholder="Country"></td>
-    </div>
-    </tr>
-
-    <tr>
-      <div class="form-group">
-      <td ><label for="Favourite_Color">City</label></td>
-      <td><input type="fav_color" class="form-control" id="fav_color" placeholder="Favourite Color"></td>
-    </div>
-    </tr>
-
-    <tr>
-      <div class="form-group">
-      <td><label for="Upload_pic">Upload_pic</label></td>
-      <td><input type="file" id="photo"></td>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group" style="color:white;">
+            <label for="Upload_pic">Upload_pic</label>
+      <input type="file" id="photo">
       </div>
-    </tr>
-</table>
-<br/>
-  
-<button type="submit" class="btn btn-default">Submit</button>
-  <% end %>
+          </div>
+        </div>
+      
+      <hr class="colorgraph">
+      <div class="row">
+        <div class="col-xs-12 col-md-6"><input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
+        <div class="col-xs-12 col-md-6">
+          <%= link_to 'Sign In',new_user_session_path,class: "btn btn-success btn-block btn-lg" %>
+                      </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-8">
+          <div class="form-group">
+                        <%= render "devise/shared/links" %>
+          </div>
+        </div>
+    </form>
+  </div>
+</div>
 
-  <%= render "devise/shared/links" %>
+  
+  <%end%>

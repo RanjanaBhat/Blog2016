@@ -7,17 +7,17 @@ Posted by, <font color="purple"><%= post.user.email %> </font>
    <%= post.body %>
 </p>
 </h3>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
 	<font color="grey"> <%= time_ago_in_words(post.created_at) %> ago </font>
 <br/>
 <%#= link_to 'Show', category_post_path(@category, post) %> 
 <% if user_signed_in? %>
 <% if current_user.id == post.user_id %> 
 <%= link_to edit_category_post_path(@category, post), :title => 'Edit', :rel => 'tooltip', class: "btn btn-info" do %>
-    <span class="glyphicon glyphicon-edit"></span> Edit  
+    <span class="glyphicon glyphicon-edit"></span> 
 <% end %>	| 
 <%= link_to category_post_path(@category, post), :title => 'Delete', :rel => 'tooltip', method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: "btn  btn-danger" do %>
-          <span class="glyphicon glyphicon-trash"></span> Delete 
+          <span class="glyphicon glyphicon-trash"></span>
           <% end %>
  <% end %>
  <% end %>

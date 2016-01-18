@@ -14,7 +14,41 @@
  /*
  *= require bootstrap_and_overrides
  */
+ /* Credit to bootsnipp.com for the css for the color graph */
+#sin{
+          background-image: url(Wallpaper-HD-Android-For-PC-Desktop-Free-Download.jpg);
+          background-size: 100%;
+          background-position: center;
+          background-color: black;
+        }
+.colorgraph {
+  height: 5px;
+  border-top: 0;
+  background: #c4e17f;
+  border-radius: 10px;
+  }
+ .slider-size {
+height: 400px; /* This is your slider height */
+}
+ .tales {
+  width: 100%;
+  
+} 
+#mycarousel{
+  width: 100%;
+  height: 200px;
+}
+ .carousel-inner{
+  width:150%;
+  max-height: 250px ;
+}
 
+.panel > .panel-heading {
+    background-image: url(header.jpg);
+    background-position: center;
+
+}
+}
 .table table-striped
 {
   background-color: pink;
@@ -98,6 +132,7 @@ body h1,h2
 {
 	font-family: "HelveticaNeue-Light", "Helvetiva Neue Light","Helvetiva Neue" Helvetica, Arial, sans-serif;
 	font-weight: 300;
+
   color: white;
 }
 .intro
@@ -234,3 +269,4 @@ form
  -webkit-border-radius: 50px;
  -moz-border-radius: 50px;
 }
+

@@ -1,10 +1,16 @@
 
 <%- model_class = Category -%>
 <body>
-<div class="page-header">
-  <font color="white"><h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1></font>
+  <div class="panel panel-info">
+  <div class="panel-heading" ><h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1></div>
 </div>
-<table class="table table-striped">
+<ul class="nav nav-tabs">
+  <li class="active"><%= link_to 'View Categories',Category%></li>
+  <li><%= link_to 'View Posts',Post%></li>
+  <li><%= link_to 'View Comments',Comment%></li>
+  <li><%= link_to 'View Tags',Tag%></li>
+</ul>
+<table class="table table-striped" >
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:Category_id) %></th>
@@ -24,10 +30,10 @@
         <% if user_signed_in? %> 
         <td>
           <%= link_to edit_category_path(category), :title => 'Edit', :rel => 'tooltip', class: "btn btn-info btn-xs" do %>
-              <span class="glyphicon glyphicon-edit"></span> Edit  
+              <span class="glyphicon glyphicon-edit"></span> 
           <% end %>
           <%= link_to category_path(category), :title => 'Delete', :rel => 'tooltip', method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: "btn btn-xs btn-danger" do %>
-          <span class="glyphicon glyphicon-trash"></span> Delete 
+          <span class="glyphicon glyphicon-trash"></span>
           <% end %>
         </td>
         <% end %>
@@ -37,11 +43,19 @@
 </table>
 </body>
 <%#= f.hidden_field :user_id, :value => current_user.id %>
+
 <%= link_to root_path, class: "btn btn-default", :title => 'Back', :rel => 'tooltip' do %>
-    <span class="glyphicon glyphicon-step-backward"></span> Back 
+    <span class="glyphicon glyphicon-step-backward"></span> 
 <% end %>
 <%= link_to new_category_path, :title => 'New Category', :rel => 'tooltip', class: "btn btn-primary" do %>
-    <span class="glyphicon glyphicon-new-window"></span> New 
+    <span class="glyphicon glyphicon-new-window"></span>
 <% end %>
 
 
+ <ul class="pagination">
+  <li><%=link_to '1',Category%></li>
+  <li><%=link_to '2',Post%></li>
+  <li><%=link_to '3',Comment%></li>
+  <li><%=link_to '4',Tag%></li>
+  
+</ul>

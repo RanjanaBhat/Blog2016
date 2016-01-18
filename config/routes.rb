@@ -18,7 +18,7 @@ Blog2016::Application.routes.draw do
     resources :comments
   end
 end
-
+get "/home/:blogger" => "home#show"
   
 #root to: 'categories#index'
 

@@ -1,7 +1,13 @@
 <%- model_class = Tag -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+<div class="panel panel-info">
+  <div class="panel-heading" ><h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1></div>
 </div>
+<ul class="nav nav-tabs">
+  <li class="active"><%= link_to 'View Categories',Category%></li>
+  <li><%= link_to 'View Posts',Post%></li>
+  <li><%= link_to 'View Comments',Comment%></li>
+  <li><%= link_to 'View Tags',Tag%></li>
+</ul>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -22,10 +28,10 @@
         <% if user_signed_in? %> 
         <td>
           <%= link_to edit_tag_path(tag), :title => 'Edit', :rel => 'tooltip', class: "btn btn-info btn-xs" do %>
-            <span class="glyphicon glyphicon-edit"></span> Edit 
+            <span class="glyphicon glyphicon-edit"></span> 
           <% end %>
           <%= link_to tag_path(tag), :title => 'Delete', :rel => 'tooltip', method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: "btn btn-xs btn-danger" do %>
-          <span class="glyphicon glyphicon-trash"></span> Delete 
+          <span class="glyphicon glyphicon-trash"></span>  
           <% end %>
         </td>
         <%end%>
@@ -34,8 +40,16 @@
   </tbody>
 </table>
 <%= link_to root_path, :title => 'Back', :rel => 'tooltip', class: "btn btn-default" do %>
-    <span class="glyphicon glyphicon-step-backward"></span> Back 
+    <span class="glyphicon glyphicon-step-backward"></span> 
 <% end %>
 <%= link_to new_tag_path, :title => 'New Tag', :rel => 'tooltip', class: "btn btn-info" do %>
-    <span class="glyphicon glyphicon-new-window"></span> New 
+    <span class="glyphicon glyphicon-new-window"></span> 
 <% end %>
+
+<ul class="pagination">
+  <li><%=link_to '1',Category%></li>
+  <li><%=link_to '2',Post%></li>
+  <li><%=link_to '3',Comment%></li>
+  <li><%=link_to '4',Tag%></li>
+  
+</ul>

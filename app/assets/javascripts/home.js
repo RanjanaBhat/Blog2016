@@ -5,3 +5,11 @@ document.getElementById("nav01").innerHTML =
 "<li><a href='customers.html'>Data</a></li>" +
 "<li><a href='about.html'>About</a></li>" +
 "</ul>"; 
+
+<script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script>
+
+        

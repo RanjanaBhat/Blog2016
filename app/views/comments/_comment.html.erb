@@ -7,14 +7,14 @@ posted by, <font color="purple"><%= comment.user.email %> </font>
 		<%= comment.body %>
 	</p>
 </h3>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 <font color="grey"> <%= time_ago_in_words(comment.created_at) %> ago </font>
 <br/>
 
 <% if user_signed_in? %>
 <% if current_user.id == comment.user_id %> 
 <%= link_to edit_category_post_comment_path(@post, comment), :title => 'Edit', :rel => 'tooltip', class: "btn btn-info" do %>
-              <span class="glyphicon glyphicon-edit"></span> Edit  
+              <span class="glyphicon glyphicon-edit"></span> 
           <% end %>	| 
           
 <%= link_to "Delete", [@post.category,@post,comment], :title => 'Delete', :rel => 'tooltip', method: :delete, data: { confirm: "Are you sure?"}%>

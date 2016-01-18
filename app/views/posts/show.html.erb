@@ -26,15 +26,15 @@
 <%#= f.hidden_field :category_id, :value => @category.id %>
 <%#= f.hidden_field :post_id, :value => @post.id %>
 <%= link_to posts_path, :title => 'Back', :rel => 'tooltip', class: "btn btn-default" do %>
-    <span class="glyphicon glyphicon-step-backward"></span> Back 
+    <span class="glyphicon glyphicon-step-backward"></span>  
 <% end %>
   <% if user_signed_in? %>
 <% if current_user.id == @post.user_id %>
 <%= link_to edit_post_path(@post), :title => 'Edit', :rel => 'tooltip', class: "btn btn-info" do %>
-              <span class="glyphicon glyphicon-edit"></span> Edit  
+              <span class="glyphicon glyphicon-edit"></span>  
           <% end %>
 <%= link_to post_path(@post), :title => 'Delete', :rel => 'tooltip', method: :delete, data: { confirm: 'Are you sure?'}, remote: true, class: "btn btn-danger" do %>
-          <span class="glyphicon glyphicon-trash"></span> Delete 
+          <span class="glyphicon glyphicon-trash"></span>
           <% end %>
 <% end %>
 <% end %>
@@ -49,7 +49,7 @@ No. of Comments: <%= @post.comments.count %>
 <%= form_for ([@post.category, @post, @post.comments.build]) do |f| %>
 <div class="field">
 <%= f.label :User_Name %><br/>
-<%= f.text_field :name, :value => current_user.name%>
+<%= f.text_field :name, :value => current_user.name %>
 </div> 
 <div class="field">
 <%= f.label :body %><br/>
@@ -59,7 +59,7 @@ No. of Comments: <%= @post.comments.count %>
 <%= f.hidden_field :post_id, :value => @post.id %>
 <%= f.hidden_field :user_id, :value => current_user.id %>
 <p> <%= f.submit nil, :title => 'Save', :rel => 'tooltip', :class => 'btn btn-primary' do %>
-      <span class="glyphicon glyphicon-disk-saved"></span> Update  
+      <span class="glyphicon glyphicon-disk-saved"></span>   
           <% end %> </p>
 <% end %>
 
