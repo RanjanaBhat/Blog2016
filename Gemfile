@@ -9,6 +9,7 @@ gem 'mysql2',   '~> 0.3.10'
 gem 'devise'
 gem 'has_permalink'
  gem 'paperclip'
+ gem 'bootstrap-datepicker-rails'
 #gem 'twitter-bootstrap-rails'
 
 # Gems used only for assets and not required
@@ -19,6 +20,7 @@ group :assets do
   gem 'therubyracer'
 	gem 'less-rails'
 	gem 'twitter-bootstrap-rails'
+
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby

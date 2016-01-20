@@ -1,0 +1,58 @@
+<ul class="nav nav-tabs">
+<li class="active">
+<li><a href="/home/index" data-toggle="tooltip" title="home" class="glyphicon glyphicon-home">Home</a></li>
+<li><a href="/comments" data-toggle="tooltip" title="Comment">Comment</a></li>
+<li><a href="/categories" data-toggle="tooltip" title="Show Categories">Category</a></li>   
+<li><a href="/tags" data-toggle="tooltip" title="show tags">Tag</a></li>
+</div><br/>
+<%=link_to "Progress_bar_demo", home_progress_path %> <br/>
+<%=link_to "Scrollspy_demo", home_scrolspy_path %><br/>
+<%=link_to "Social_demo", home_social_path %>
+
+<div>
+ <ol class = "breadcrumb">
+  <li><a href = "#">Home</a></li>
+  <li><a href = "#">2013</a></li>
+  <li class = "active">November</li>
+</ol>
+</div>
+
+<h2>Sweet alert Demo<h2>
+<script>
+$(document).ready(function(){
+   $("#mybtn").click(function(){
+       swal("Here's a message!")
+           });
+});
+</script>
+<button type="button" class="btn btn-info" id="mybtn">Click Me</button>
+
+<h2>ButtonGroup</h2>
+ <div class="btn-group btn-group-lg">
+ 	<script>
+$(document).ready(function(){
+   $("#mybtn").click(function(){
+       swal("Here's a message!")
+           });
+});
+</script>
+  <button type="button" class="btn btn-primary" id="mybtn">Primary</button>
+  <button type="button" class="btn btn-success" id="mybtn">Success</button>
+  <button type="button" class="btn btn-warning" id="mybtn">Warning</button>
+</div>
+<br/><br/>
+<%= link_to root_path, :title => 'Back', :rel => 'tooltip', class: "btn btn-default" do %>
+    <span class="glyphicon glyphicon-step-backward"></span> 
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+	

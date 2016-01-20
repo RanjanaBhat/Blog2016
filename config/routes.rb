@@ -6,6 +6,13 @@ Blog2016::Application.routes.draw do
 
   resources :comments
   resources :posts
+
+  get "home/blogger"
+  get "home/demo"
+  get "home/index"
+  get "home/progress"
+  get "home/scrolspy"
+  get "home/social"
   
   #root to: 'tags#index'
 
@@ -18,7 +25,7 @@ Blog2016::Application.routes.draw do
     resources :comments
   end
 end
-get "/home/:blogger" => "home#show"
+
   
 #root to: 'categories#index'
 

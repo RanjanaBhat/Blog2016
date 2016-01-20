@@ -1,0 +1,83 @@
+<script type="text/javascript">
+$(function () {
+  var all_classes = "";
+  var timer = undefined;
+  $.each($('li', '.social-class'), function (index, element) {
+    all_classes += " btn-" + $(element).data("code");
+  });
+  $('li', '.social-class').mouseenter(function () {
+    var icon_name = $(this).data("code");
+    if ($(this).data("icon")) {
+      icon_name = $(this).data("icon");
+    }
+    var icon = "<i class='fa fa-" + icon_name + "'></i>";
+    $('.btn-social', '.social-sizes').html(icon + "Sign in with " + $(this).data("name"));
+    $('.btn-social-icon', '.social-sizes').html(icon);
+    $('.btn', '.social-sizes').removeClass(all_classes);
+    $('.btn', '.social-sizes').addClass("btn-" + $(this).data('code'));
+  });
+  $($('li', '.social-class')[Math.floor($('li', '.social-class').length * Math.random())]).mouseenter();
+});
+</script>
+<head><link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"></head>
+  <div class="row">
+    <div class="col-sm-4 social-buttons">
+      <h3>The Buttons</h3>
+      <a class="btn btn-block btn-social btn-dropbox">
+        <i class="fa fa-dropbox"></i> Sign in with Dropbox
+      </a>
+      <a class="btn btn-block btn-social btn-facebook">
+        <i class="fa fa-facebook"></i> Sign in with Facebook
+      </a>
+      <a class="btn btn-block btn-social btn-google-plus">
+        <i class="fa fa-google-plus"></i> Sign in with Google
+      </a>
+      <a class="btn btn-block btn-social btn-linkedin">
+        <i class="fa fa-linkedin"></i> Sign in with LinkedIn
+      </a>
+      <a class="btn btn-block btn-social btn-twitter">
+        <i class="fa fa-twitter"></i> Sign in with Twitter
+      </a>
+
+      <div class="text-center">
+        <a class="btn btn-social-icon btn-dropbox"><i class="fa fa-dropbox"></i></a>
+        <a class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></a>
+        <a class="btn btn-social-icon btn-google-plus"><i class="fa fa-google-plus"></i></a>
+        <a class="btn btn-social-icon btn-linkedin"><i class="fa fa-linkedin"></i></a>
+        <a class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></a>
+      </div>
+    </div>
+   <div class="col-sm-4">
+      <div class="social-sizes">
+        <h3>Different Sizes</h3>
+
+        <a class="btn btn-block btn-social btn-lg btn-google-plus">
+          <i class="fa fa-google-plus"></i>
+          Sign in with Google
+        </a>
+
+        <a class="btn btn-block btn-social btn-google-plus">
+          <i class="fa fa-google-plus"></i>
+          Sign in with Google
+        </a>
+
+        <a class="btn btn-block btn-social btn-sm btn-google-plus">
+          <i class="fa fa-google-plus"></i>
+          Sign in with Google
+        </a>
+        <a class="btn btn-block btn-social btn-xs btn-google-plus">
+          <i class="fa fa-google-plus"></i>
+          Sign in with Google
+        </a>
+        <hr>
+        <div class="text-center">
+          <a class="btn btn-social-icon btn-lg btn-google-plus"><i class="fa fa-google-plus"></i></a>
+          <a class="btn btn-social-icon btn-google-plus"><i class="fa fa-google-plus"></i></a>
+          <a class="btn btn-social-icon btn-sm btn-google-plus"><i class="fa fa-google-plus"></i></a>
+          <a class="btn btn-social-icon btn-xs btn-google-plus"><i class="fa fa-google-plus"></i></a>
+        </div>
+      </div>
+    </div>    
+  </div>        
+</div>
+

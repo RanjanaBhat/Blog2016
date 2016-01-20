@@ -30,6 +30,8 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.3)
     bcrypt (3.1.10)
+    bootstrap-datepicker-rails (1.5.0)
+      railties (>= 3.0)
     builder (3.0.4)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -144,6 +146,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-datepicker-rails
   coffee-rails (~> 3.2.1)
   devise
   has_permalink

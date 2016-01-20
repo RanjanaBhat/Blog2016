@@ -4,9 +4,17 @@ class HomeController < ApplicationController
 			redirect_to categories_path
 		end
 	end
-	def show
-		render template: "home/#{params[:blogger]}"
+	
+	def blogger
+	end
+	def demo
 	end
 
+	def progress
+	end
+	def scrolspy
+	end
+	def social
+	end
 	
 end

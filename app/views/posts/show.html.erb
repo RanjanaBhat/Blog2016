@@ -1,6 +1,6 @@
 <%- model_class = Post -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+<div class="panel panel-info">
+  <div class="panel-heading" ><h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1></div>
 </div>
 
 <dl class="dl-horizontal">
@@ -38,6 +38,7 @@
           <% end %>
 <% end %>
 <% end %>
+<%if user_signed_in? %>
 <h2> Comments </h2>
 <%= render :partial => @post.comments %>
 
@@ -63,3 +64,9 @@ No. of Comments: <%= @post.comments.count %>
           <% end %> </p>
 <% end %>
 
+<%else%>
+<h2> Comments </h2>
+<%= render :partial => @post.comments %>
+
+No. of Comments: <%= @post.comments.count %>
+<%end%>
