@@ -1,13 +1,11 @@
 <%- model_class = Category -%>
 <div class="panel panel-info">
-  <div class="panel-heading" ><h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1></div>
+	<div class="panel-heading" ><h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1></div>
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
-  <dd><%= @category.name %></dd>
-  <dt><strong><%#= model_class.human_attribute_name(:permalink) %></strong></dt>
-  <dd><%#= @category.permalink %></dd>
+	<dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+	<dd><%= @category.name %></dd>
 </dl>
 
 <%= link_to categories_path, :title => 'Back', :rel => 'tooltip', class: "btn btn-default" do %>
@@ -29,7 +27,7 @@
 No. of Posts: <%= @category.posts.count %>
 <% if user_signed_in? %>
 <h4> Leave a Post! </h4>
-<%#= link_to 'Add Post', new_category_post_path(@category) %>
+<!--New Post Form -->
 <%= link_to new_category_post_path(@category), :title => 'New Post', :rel => 'tooltip', class: "btn btn-primary" do %>
 <span class="glyphicon glyphicon-new-window"></span> Add Post
 <% end %>

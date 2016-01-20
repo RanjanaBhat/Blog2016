@@ -12,11 +12,8 @@
       <th><%= model_class.human_attribute_name(:Post_title) %></th>
       <th><%= model_class.human_attribute_name(:Post_body) %></th>
       <th><%= model_class.human_attribute_name(:Category_name) %></th>
-      <th><%#= model_class.human_attribute_name(:user_id) %></th>
-      <th><%#= model_class.human_attribute_name(:permalink) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%#=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
+      </tr>
   </thead>
   <tbody>
     <% @posts.each do |post| %>
@@ -27,12 +24,9 @@
         <td><%= post.title %></td>
         <td><%= post.body %></td>
         <td><%= post.category_id %></td>
-        <td><%#= post.user_id %></td>
-        <td><%#= post.permalink %></td>
         <td><%=l post.created_at %></td>
         <% if user_signed_in? %>
         <td>
-
           <%= link_to edit_post_path(post), :title => 'Edit', :rel => 'tooltip', class: "btn btn-info btn-xs" do %>
               <span class="glyphicon glyphicon-edit"></span>  
           <% end %>
@@ -53,11 +47,9 @@
     <span class="glyphicon glyphicon-new-window"></span>
 <% end %>
 <% end %>
-
 <ul class="pagination">
   <li><%=link_to '1',Category%></li>
   <li><%=link_to '2',Post%></li>
   <li><%=link_to '3',Comment%></li>
   <li><%=link_to '4',Tag%></li>
-  
 </ul>

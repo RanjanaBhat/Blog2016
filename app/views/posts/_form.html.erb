@@ -1,5 +1,4 @@
 <%= form_for @post, :html => { :class => "form-horizontal post" } do |f| %>
-
   <% if @post.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
       <div class="panel-heading">
@@ -14,7 +13,6 @@
       </div>
     </div>
   <% end %>
-
   <div class="form-group">
     <%= f.label :User_name, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
@@ -45,28 +43,12 @@
   </div>
   <%= f.hidden_field :category_id, :value => @category.id %>
   <%= f.hidden_field :user_id, :value => current_user.id %>
-
   <div class="form-group">
     <%= f.label :category_name, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
       <%= f.text_field :name, :value=> @category.name,:class => 'form-control' %>
     </div>
     <%=f.error_span(:category_id) %>
-  </div>
-  <%#= f.hidden_field :user_id, :value => @user.id %>
-  <div class="form-group">
-    <%#= f.label :user_id, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%#= f.number_field :user_id, :class => 'form-control' %>
-    </div>
-    <%#=f.error_span(:user_id) %>
-  </div>
-  <div class="form-group">
-    <%#= f.label :permalink, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%#= f.text_field :permalink, :class => 'form-control' %>
-    </div>
-    <%#=f.error_span(:permalink) %>
   </div>
   <%= f.hidden_field :category_id, :value => @category.id %>
   <div class="form-group">
@@ -78,12 +60,9 @@
           <% end %>
         </div>
       </div>
-
   <br><br>
-
   <%= link_to 'Create Tag', new_tag_path %>
      <br><br>
-
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :title => 'Save', :rel => 'tooltip', :class => 'btn btn-primary' do %>

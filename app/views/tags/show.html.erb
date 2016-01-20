@@ -2,7 +2,6 @@
 <div class="panel panel-info">
   <div class="panel-heading" ><h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1></div>
 </div>
-
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @tag.name %></dd>
@@ -17,6 +16,6 @@
 <span class="glyphicon glyphicon-edit"></span>  
 <% end %>
 <%= link_to tag_path(@tag),:title => 'Delete', :rel => 'tooltip', method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: "btn btn-danger" do %>
-          <span class="glyphicon glyphicon-trash"></span> 
-          <% end %>
+          <span class="glyphicon glyphicon-trash"></span>
+<% end %>
 

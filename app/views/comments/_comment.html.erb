@@ -14,10 +14,12 @@ posted by, <font color="purple"><%= comment.user.email %> </font>
 <% if user_signed_in? %>
 <% if current_user.id == comment.user_id %> 
 <%= link_to edit_category_post_comment_path(@post, comment), :title => 'Edit', :rel => 'tooltip', class: "btn btn-info" do %>
-              <span class="glyphicon glyphicon-edit"></span> 
-          <% end %>	| 
-          
-<%= link_to "Delete", [@post.category,@post,comment], :title => 'Delete', :rel => 'tooltip', method: :delete, data: { confirm: "Are you sure?"}%>
+<span class="glyphicon glyphicon-edit"></span> 
+<% end %>	| 
+<%= link_to comment_path(@post), :title => 'Delete', :rel => 'tooltip', method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: "btn  btn-danger" do %>
+          <span class="glyphicon glyphicon-trash"></span>
+<% end %>
+<%#= link_to "Delete", [@post.category,@post,comment], :title => 'Delete', :rel => 'tooltip', method: :delete, data: { confirm: "Are you sure?"}%>
 <% end %>
 <% end %>
 <% end %>

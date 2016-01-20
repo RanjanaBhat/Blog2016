@@ -12,19 +12,7 @@
   <dd><%= @post.title %></dd>
   <dt><strong><%= model_class.human_attribute_name(:Post_body) %>:</strong></dt>
   <dd><%= @post.body %></dd>
-  <dt><strong><%#= model_class.human_attribute_name(:tag) %></strong></dt>
-  <dd><%#= @post.tag.name %></dd>
-  
-  <dt><strong><%#= model_class.human_attribute_name(:category_id) %></strong></dt>
-
-  <dd><%#= @post.category_id %></dd>
-  <dt><strong><%#= model_class.human_attribute_name(:user_id) %></strong></dt>
-  <dd><%#= @post.user_id %></dd>
-  <dt><strong><%#= model_class.human_attribute_name(:permalink) %></strong></dt>
-  <dd><%#= @post.permalink %></dd>
 </dl>
-<%#= f.hidden_field :category_id, :value => @category.id %>
-<%#= f.hidden_field :post_id, :value => @post.id %>
 <%= link_to posts_path, :title => 'Back', :rel => 'tooltip', class: "btn btn-default" do %>
     <span class="glyphicon glyphicon-step-backward"></span>  
 <% end %>
@@ -41,12 +29,10 @@
 <%if user_signed_in? %>
 <h2> Comments </h2>
 <%= render :partial => @post.comments %>
-
 No. of Comments: <%= @post.comments.count %>
 
-
+<!--New Comment Form -->
 <h4> Leave a Comment! </h4>
-
 <%= form_for ([@post.category, @post, @post.comments.build]) do |f| %>
 <div class="field">
 <%= f.label :User_Name %><br/>
@@ -63,10 +49,8 @@ No. of Comments: <%= @post.comments.count %>
       <span class="glyphicon glyphicon-disk-saved"></span>   
           <% end %> </p>
 <% end %>
-
 <%else%>
 <h2> Comments </h2>
 <%= render :partial => @post.comments %>
-
 No. of Comments: <%= @post.comments.count %>
 <%end%>

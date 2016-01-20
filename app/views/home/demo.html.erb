@@ -1,14 +1,16 @@
 <ul class="nav nav-tabs">
 <li class="active">
+<!--Tab Demo -->
 <li><a href="/home/index" data-toggle="tooltip" title="home" class="glyphicon glyphicon-home">Home</a></li>
 <li><a href="/comments" data-toggle="tooltip" title="Comment">Comment</a></li>
 <li><a href="/categories" data-toggle="tooltip" title="Show Categories">Category</a></li>   
 <li><a href="/tags" data-toggle="tooltip" title="show tags">Tag</a></li>
 </div><br/>
+<!--Links  -->
 <%=link_to "Progress_bar_demo", home_progress_path %> <br/>
 <%=link_to "Scrollspy_demo", home_scrolspy_path %><br/>
 <%=link_to "Social_demo", home_social_path %>
-
+<!--Breadcrumb Demo -->
 <div>
  <ol class = "breadcrumb">
   <li><a href = "#">Home</a></li>
@@ -16,7 +18,7 @@
   <li class = "active">November</li>
 </ol>
 </div>
-
+<!--SweetAlert Demo -->
 <h2>Sweet alert Demo<h2>
 <script>
 $(document).ready(function(){
@@ -26,7 +28,7 @@ $(document).ready(function(){
 });
 </script>
 <button type="button" class="btn btn-info" id="mybtn">Click Me</button>
-
+<!--Buttongroup Demo -->
 <h2>ButtonGroup</h2>
  <div class="btn-group btn-group-lg">
  	<script>
@@ -44,15 +46,3 @@ $(document).ready(function(){
 <%= link_to root_path, :title => 'Back', :rel => 'tooltip', class: "btn btn-default" do %>
     <span class="glyphicon glyphicon-step-backward"></span> 
 <% end %>
-
-
-
-
-
-
-
-
-
-
-
-	

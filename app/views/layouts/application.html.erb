@@ -1,34 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head><%= favicon_link_tag 'favicon(1).ico' %>
-
   <title>Blog2016</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  
-  
 </head>
 <style>
 body {background-color: lightgrey ;
 }
 </style>
-
-
 <div id="snow">
 <body >
-
 <div id="hdr">
-  
-  <div class="container">
-    
+   <div class="container">
       <ul class="nav navbar-nav pull-right">
         <% if user_signed_in? %>
         <b>Signed in as <%= current_user.email %>. Not you?</b> <%= image_tag current_user.photo, :size => "80x80", :class=> "img-circular" %>
-         <class="round-image-50"> <%#= image_tag current_user.photo(:thumb) %>
-        
+         <class="round-image-50">
         <br/>
-
           <div class="dropdown" align= "right">
             <a class="dropdown-toggle"  data-toggle="dropdown" href="#" rel="tooltip" data-placement="top" title="User Account">
             <%= current_user.name  %>
@@ -38,7 +28,6 @@ body {background-color: lightgrey ;
               <li><%= link_to 'Profile', edit_user_registration_path %></li>
               <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
               <li><%= link_to 'Home', Category%></li>
-
             </ul>
           </div>
         <% else %>
@@ -47,18 +36,14 @@ body {background-color: lightgrey ;
         <% end %>
       </div>
       </ul>
-    
   </div>
 </nav>
   <div class="container">
 <%= yield %>
 </div><!--container-->
-
 </div>
 </div>
 </body>
-
-  </div>
 </div>
-
+</div>
 </html>

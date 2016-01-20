@@ -1,22 +1,6 @@
 Blog2016::Application.routes.draw do
   
-  resources :tags
-
-  resources :posttags
-
-  resources :comments
-  resources :posts
-
-  get "home/blogger"
-  get "home/demo"
-  get "home/index"
-  get "home/progress"
-  get "home/scrolspy"
-  get "home/social"
   
-  #root to: 'tags#index'
-
-
   devise_for :users
   root to: 'home#index'
   
@@ -25,9 +9,19 @@ Blog2016::Application.routes.draw do
     resources :comments
   end
 end
+resources :tags
 
-  
-#root to: 'categories#index'
+resources :posttags
+
+resources :comments
+resources :posts
+
+  get "home/blogger"
+  get "home/demo"
+  get "home/index"
+  get "home/progress"
+  get "home/scrolspy"
+  get "home/social"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

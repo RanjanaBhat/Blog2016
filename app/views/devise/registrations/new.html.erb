@@ -1,111 +1,109 @@
-  <div id="sup">
-    <%= form_for(resource ,as: resource_name, url: registration_path(resource_name)) do |f| %>
-
-
+<div id="sup">
+<%= form_for(resource ,as: resource_name, url: registration_path(resource_name)) do |f| %>
+<div class="row">
+<div class="  col-md-6  col-md-offset-3 ">
+<form data-toggle="validator" role="form">
+  <h1 align="center"> Sign Up </h1>
+  <hr class="colorgraph">
   <div class="row">
-      <div class="  col-md-6  col-md-offset-3 ">
-      <form data-toggle="validator" role="form">
-        <h1 align="center"> Sign Up </h1>
-        <hr class="colorgraph">
-        <div class="row">
-          <div class=" col-md-6 ">
-            <div class="form-group">
-                <%=  f.text_field :fname, class: 'form-control input-lg',required: true, placeholder: "First Name", tabindex:"1" %> 
-                <span class="help-block with-errors"></span>
-            </div>
-          </div>
-          <div class=" col-md-4  col-md-push-2">
-            <div class="form-group">
-              <%=  f.text_field :lname, class: 'form-control input-lg',required: true, placeholder: "Last Name", tabindex:"2" %>  
-              <div class="help-block with-errors"></div>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <%=  f.text_field :name, class: 'form-control input-lg', required: true,placeholder: "User Name" ,tabindex:"3" %> 
-        </div>
-        <div class="form-group">
-          <%=  f.text_field :email, class: 'form-control input-lg',required: true, placeholder: "Email", tabindex:"4" %> 
-        </div>
-        <div class="row">
-          <div class=" col-md-6">
-            <div class="form-group">
-              <%=  f.password_field :password, autocomplete: "off",required: true, class: 'form-control input-lg', placeholder: "Password", tabindex:"5" %> 
-            </div>
-          </div>
-          <% if @validatable %>
-      <span class="help-block"><%= @minimum_password_length %> characters minimum</span>
-      <% end %>
-          <div class=" col-md-6">
-            <div class="form-group">
-
-
-              <%=  f.password_field :password_confirmation, class: 'form-control input-lg',required: true, placeholder: "Password Confirmation", tabindex:"6" %> 
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="form-group">
-              <%= f.label :Gender %> :
-      <label><input type="radio" name="gender" id="gender" value="female" 
-        checked>Female</label>
-      <label><input type="radio" name="gender" id="gender" value="female">Male
-      </label>
+    <div class=" col-md-6 ">
+      <div class="form-group">
+        <%=  f.text_field :fname, class: 'form-control input-lg',required: true, placeholder: "First Name", tabindex:"1" %> 
+        <span class="help-block with-errors"></span>
+      </div>
     </div>
-          </div>
-          <div class=" col-md-6">
-            <div class="form-group" >
-              <%= f.label "Birth Date" %><br>
+    <div class=" col-md-4  col-md-push-2">
+      <div class="form-group">
+        <%=  f.text_field :lname, class: 'form-control input-lg',required: true, placeholder: "Last Name", tabindex:"2" %>  
+        <div class="help-block with-errors"></div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <%=  f.text_field :name, class: 'form-control input-lg', required: true,placeholder: "User Name" ,tabindex:"3" %> 
+  </div>
+  <div class="form-group">
+    <%=  f.text_field :email, class: 'form-control input-lg',required: true, placeholder: "Email", tabindex:"4" %> 
+  </div>
+  <div class="row">
+    <div class=" col-md-6">
+      <div class="form-group">
+        <%=  f.password_field :password, autocomplete: "off",required: true, class: 'form-control input-lg', placeholder: "Password", tabindex:"5" %> 
+      </div>
+    </div>
+    <% if @validatable %>
+    <span class="help-block"><%= @minimum_password_length %> characters minimum</span>
+    <% end %>
+    <div class=" col-md-6">
+      <div class="form-group">
+
+
+        <%=  f.password_field :password_confirmation, class: 'form-control input-lg',required: true, placeholder: "Password Confirmation", tabindex:"6" %> 
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.label :Gender %> :
+        <label><input type="radio" name="gender" id="gender" value="female" 
+          checked>Female</label>
+          <label><input type="radio" name="gender" id="gender" value="female">Male
+          </label>
+        </div>
+      </div>
+      <div class=" col-md-6">
+        <div class="form-group" >
+          <%= f.label "Birth Date" %><br>
           <script type="text/javascript">
-            $(document).ready(function(){
-              $('#datepicker').datepicker();
-              });
+          $(document).ready(function(){
+            $('#datepicker').datepicker();
+          });
           </script>
           <%= f.text_field :birthday , :id => "datepicker" ,class: 'form-control input-lg' , required: true, placeholder: "BirthDate" %>
 
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <%=  f.text_field :cur_city, class: 'form-control input-lg',required: true, placeholder: "City", tabindex:"9" %> 
-            </div>
-          </div>
-          <div class="col-sm-6" "col-md-pull-3">
-            <div class="form-group">
-              <%=  f.text_field :country, class: 'form-control input-lg', required: true,placeholder: "Country", tabindex:"10" %> 
-            </div>
-          </div>
-          <div class=" col-md-6">
-            <div class="form-group">
-              <%=  f.text_field :fav_color, class: 'form-control input-lg',required: true, placeholder: "Favourite Color", tabindex:"11" %> 
-            </div>
-          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <%=  f.text_field :cur_city, class: 'form-control input-lg',required: true, placeholder: "City", tabindex:"9" %> 
+        </div>
+      </div>
+      <div class="col-sm-6" "col-md-pull-3">
+        <div class="form-group">
+          <%=  f.text_field :country, class: 'form-control input-lg', required: true,placeholder: "Country", tabindex:"10" %> 
+        </div>
+      </div>
+      <div class=" col-md-6">
+        <div class="form-group">
+          <%=  f.text_field :fav_color, class: 'form-control input-lg',required: true, placeholder: "Favourite Color", tabindex:"11" %> 
+        </div>
+      </div>
 
-          <div class="col-md-6">
-            <div class="form-group" >
-              <%= f.label :Upload_pic %> :
-              <%= f.file_field :photo, :autofocus => true %>
+      <div class="col-md-6">
+        <div class="form-group" >
+          <%= f.label :Upload_pic %> :
+          <%= f.file_field :photo, :autofocus => true %>
         </div>
-            </div>
-          </div>
-        
-        <hr class="colorgraph">
-        <div class="row">
-          <div class="col-xs-12 col-md-6"><input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
-          <div class="col-xs-12 col-md-6">
-            <%= link_to 'Sign In',new_user_session_path,class: "btn btn-success btn-block btn-lg" %>
-                        </div>
-        </div>
-        <div class="row">
-          <div class=" col-md-8">
-            <div class="form-group">
-                          <%= render "devise/shared/links" %>
-            </div>
-          </div>
-      </form>
+      </div>
     </div>
+    
+    <hr class="colorgraph">
+    <div class="row">
+      <div class="col-xs-12 col-md-6"><input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
+      <div class="col-xs-12 col-md-6">
+        <%= link_to 'Sign In',new_user_session_path,class: "btn btn-success btn-block btn-lg" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class=" col-md-8">
+        <div class="form-group">
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </form>
   </div>
-  <%end%>
+</div>
+<%end%>
 
-    
-    
+
+        
